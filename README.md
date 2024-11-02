@@ -10,3 +10,5 @@ Dependencies:
 
 Example for a wallpaper:
 ![example of such a generated wallpaper](https://raw.githubusercontent.com/devcey/waveform/refs/heads/main/wallpapers/sample_wall.png?token=GHSAT0AAAAAACX3J34SZIYEDP2SUBD36F7IZZGEWJA)
+
+(And please, don't ask why I used a game engine (Godot) for this. It sounded way simpler to do for me, and it might have actually been. I'm still kind of a newbie, ok)
