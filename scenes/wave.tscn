@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://d28woq7ox0g6c"]
+
+[ext_resource type="Script" path="res://script/main.gd" id="1_yqpd5"]
+[ext_resource type="FontFile" uid="uid://s56di55b46ll" path="res://Minecraftia-Regular.ttf" id="2_inggc"]
+[ext_resource type="Script" path="res://script/outputwavesprite.gd" id="3_krkwo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3xb1o"]
+
+[node name="wave" type="Node2D"]
+script = ExtResource("1_yqpd5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.0901961, 0.0941176, 0.109804, 1)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(411, 358, 1509, 358, 1509, 722, 411, 722, 411, 357)
+width = 2.0
+default_color = Color(0.894118, 0.898039, 0.901961, 1)
+
+[node name="ArtistOutput" type="Label" parent="."]
+offset_left = 412.0
+offset_top = 309.0
+offset_right = 1508.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0.894118, 0.898039, 0.901961, 1)
+theme_override_fonts/font = ExtResource("2_inggc")
+text = "Artist"
+
+[node name="DescriptionOutput" type="Label" parent="."]
+offset_left = 412.0
+offset_top = 727.0
+offset_right = 1508.0
+offset_bottom = 1084.0
+theme_override_colors/font_color = Color(0.894118, 0.898039, 0.901961, 1)
+theme_override_fonts/font = ExtResource("2_inggc")
+text = "This is a description"
+horizontal_alignment = 2
+autowrap_mode = 3
+
+[node name="TitleOutput" type="Label" parent="."]
+offset_left = 412.0
+offset_top = 331.0
+offset_right = 1508.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(0.894118, 0.898039, 0.901961, 1)
+theme_override_fonts/font = ExtResource("2_inggc")
+text = "Title"
+
+[node name="Output" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = SubResource("CompressedTexture2D_3xb1o")
+script = ExtResource("3_krkwo")
+
+[connection signal="tree_entered" from="ArtistOutput" to="." method="_on_artist_output_tree_entered"]
